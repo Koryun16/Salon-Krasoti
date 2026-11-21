@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Студия Рзаевой Анны — салон красоты в Батайске</title>
+<meta name="description" content="Мужские и женские стрижки, окрашивание, маникюр, педикюр и брови в Батайске. Студия Рзаевой Анны, ул. Ворошилова 158. Запишитесь онлайн или по телефону.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --text:#231F1C; --muted:#4A433D; --line:rgba(90,60,35,.16);
+  --accent:#98653F; --accent-dark:#7C5232; --accent-text:#6F4526;
+  --glass:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.34));
+  --edge:rgba(255,255,255,.75);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.25),0 8px 32px rgba(90,60,35,.14);
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:64px; --s12:96px;
+  --r:24px; --r-s:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:88px;background:#F1EAE2}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-family:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+.bg{position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(45vmax 45vmax at 8% 4%,#EBCDAE 0%,transparent 62%),
+  radial-gradient(40vmax 40vmax at 96% 28%,#E3C09E 0%,transparent 62%),
+  radial-gradient(48vmax 48vmax at 18% 100%,#F5E2CD 0%,transparent 62%),
+  radial-gradient(36vmax 36vmax at 90% 92%,#DDB693 0%,transparent 62%),#F1EAE2}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--s2)}
+section{padding:var(--s8) 0;scroll-margin-top:80px}
+h1,h2,h3{font-weight:600;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:2rem}
+h2{font-size:1.75rem;margin-bottom:var(--s4)}
+h3{font-size:1.125rem}
+.lead{color:var(--muted);max-width:56ch}
+
+/* стекло */
+.card,.quote,form,.ph,.why ul,.top .wrap{background:var(--glass);border:1px solid var(--edge);box-shadow:var(--shadow);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .card,.quote,form,.ph,.why ul,.top .wrap,.nav{background:rgba(255,255,255,.9)}
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--s3);border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:500 1rem/1 "Onest",system-ui,sans-serif;text-decoration:none;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 16px rgba(124,82,50,.28);transition:background-color .2s,color .2s}
+.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+.btn-line{background:rgba(255,255,255,.45);border-color:var(--edge);color:var(--accent-text);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 4px 12px rgba(90,60,35,.1)}
+.btn-line:hover{background:rgba(255,255,255,.8);border-color:var(--edge);color:var(--accent-text)}
+.btn-sm{min-height:40px;padding:0 var(--s2);font-size:.9375rem}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:10;padding:var(--s1) 0}
+.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;height:64px;width:calc(100% - 16px);border-radius:999px;padding:0 var(--s1) 0 var(--s3)}
+.logo{font-weight:600;text-decoration:none;line-height:1.2}
+.nav{display:none;position:absolute;left:0;right:0;top:72px;background:rgba(255,255,255,.9);border:1px solid var(--edge);border-radius:var(--r);box-shadow:var(--shadow);padding:var(--s1) var(--s3) var(--s3)}
+.nav.open{display:block}
+.nav a{display:block;padding:var(--s2) 0;text-decoration:none;border-bottom:1px solid var(--line)}
+.nav a.btn{display:flex;margin-top:var(--s3);border-bottom:1px solid var(--accent);color:#fff}
+.burger{width:48px;height:48px;border:0;border-radius:50%;background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.burger svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round}
+
+/* первый экран */
+.hero{padding-top:var(--s4)}
+.hero-grid{display:grid;gap:var(--s4)}
+.hero p.lead{margin:var(--s2) 0 var(--s3)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.hero-meta{margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--line);color:var(--muted);font-size:.9375rem}
+.hero-meta strong{display:block;color:var(--text);font-weight:600}
+.ph{border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.875rem;text-align:center;padding:var(--s2)}
+.hero .ph{aspect-ratio:4/3}
+
+/* услуги */
+.group+.group{margin-top:var(--s6)}
+.group>h3{margin-bottom:var(--s2);padding-bottom:var(--s1);border-bottom:1px solid var(--line)}
+.cards{display:grid;gap:var(--s2)}
+.card{border-radius:var(--r);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s1)}
+.card p{color:var(--muted);font-size:.9375rem;flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);margin-top:var(--s2)}
+.price{font-weight:600;font-size:1.125rem;white-space:nowrap}
+.time{color:var(--muted);font-size:.875rem;font-weight:400}
+
+/* почему мы */
+.why-grid{display:grid;gap:var(--s4)}
+.why ul{list-style:none;display:grid;gap:var(--s3);padding:var(--s3);border-radius:var(--r)}
+.why li{display:grid;grid-template-columns:32px 1fr;gap:var(--s2)}
+.why li svg{width:32px;height:32px;stroke:var(--accent-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.why li span{display:block;color:var(--muted);font-size:.9375rem}
+.why p+p{margin-top:var(--s2)}
+.why .lead{max-width:60ch}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s1)}
+.works .ph{aspect-ratio:1;flex-direction:column;gap:4px}
+
+/* отзывы */
+.quote{border-radius:var(--r);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2)}
+.quote p{flex:1}
+.quote footer{display:flex;justify-content:space-between;gap:var(--s2);font-size:.9375rem}
+.quote .tag{color:var(--accent-text);font-weight:600}
+
+/* форма */
+.book-grid{display:grid;gap:var(--s4)}
+form{border-radius:var(--r);padding:var(--s3);display:grid;gap:var(--s2);background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.46))}
+label{display:grid;gap:6px;font-size:.9375rem;font-weight:500}
+input,select{width:100%;height:48px;padding:0 var(--s2);border:1px solid rgba(90,60,35,.3);border-radius:var(--r-s);background:rgba(255,255,255,.75);color:var(--text);font:400 1rem "Onest",system-ui,sans-serif}
+input[aria-invalid="true"]{border-color:#A32C2C}
+.err{color:#A32C2C;font-size:.875rem;font-weight:400}
+.note{color:var(--muted);font-size:.8125rem;font-weight:400}
+.ok{padding:var(--s2);border-radius:var(--r-s);background:rgba(238,244,236,.9);color:#25461F;font-size:.9375rem}
+[hidden]{display:none!important}
+
+/* подвал */
+footer.site{padding:var(--s6) 0 var(--s4);border-top:1px solid var(--line)}
+.foot-grid{display:grid;gap:var(--s4)}
+.foot-grid h3{margin-bottom:var(--s1)}
+.foot-grid p,.foot-grid a{color:var(--muted)}
+.foot-grid a.tel{color:var(--text);font-weight:600;font-size:1.125rem;text-decoration:none}
+.links{display:flex;flex-wrap:wrap;gap:var(--s1);margin-top:var(--s1)}
+.links a.btn{color:var(--accent-text)}
+.copy{margin-top:var(--s4);padding-top:var(--s2);border-top:1px solid var(--line);color:var(--muted);font-size:.875rem}
+
+@media (min-width:640px){
+  .wrap{padding:0 var(--s4)}
+  h1{font-size:2.5rem}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .works{grid-template-columns:repeat(3,1fr);gap:var(--s2)}
+  .why-grid,.foot-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:960px){
+  section{padding:var(--s12) 0}
+  h1{font-size:3.25rem}
+  h2{font-size:2.25rem}
+  .burger{display:none}
+  .top .wrap{padding:0 var(--s1) 0 var(--s4)}
+  .nav{display:flex;align-items:center;gap:var(--s3);position:static;border:0;box-shadow:none;border-radius:0;padding:0;background:none}
+  .nav a{padding:0;border:0;font-size:.9375rem}
+  .nav a.btn{display:inline-flex;margin:0;min-height:48px;padding:0 var(--s3);color:#fff}
+  .hero{padding-top:var(--s8)}
+  .hero-grid{grid-template-columns:1.1fr 1fr;align-items:center;gap:var(--s8)}
+  .hero .ph{aspect-ratio:4/5}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center}
+  .book-grid{grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}
+  .foot-grid{grid-template-columns:2fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Студия Рзаевой Анны</a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#works">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a class="btn" href="#book">Записаться</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Студия красоты Рзаевой Анны в Батайске</h1>
+      <p class="lead">Мужские и женские стрижки, окрашивание, маникюр, педикюр и брови. Опытные мастера, внимание к деталям, уютная атмосфера.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#book">Записаться</a>
+        <a class="btn btn-line" href="tel:+79614090002">Позвонить</a>
+      </div>
+      <p class="hero-meta"><strong>Мастер — Рзаева Анна</strong>Батайск, ул. Ворошилова 158</p>
+    </div>
+    <div class="ph" role="img" aria-label="Место для фото студии или мастера">Здесь будет фото студии или мастера</div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Услуги и цены</h2>
+
+    <div class="group">
+      <h3>Для мужчин</h3>
+      <div class="cards">
+        <article class="card">
+          <h3>Мужская стрижка</h3>
+          <p>Стрижки любой сложности. Работают барберы и мастера со стажем от 8 лет. Мытьё головы и укладка входят в стоимость.</p>
+          <div class="card-foot"><span class="price">600&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Мужская стрижка">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Оформление бороды</h3>
+          <p>Аккуратно оформим вашу бороду. Мастера и барберы со стажем от 10 лет.</p>
+          <div class="card-foot"><span class="price">500&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Оформление бороды">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Мужской маникюр</h3>
+          <p>Профессиональный уход за ногтями и руками: это не роскошь, а уважение к себе.</p>
+          <div class="card-foot"><span class="price">1000&nbsp;₽</span><button class="btn btn-line btn-sm" data-service="Мужской маникюр">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Мужской педикюр</h3>
+          <p>Профессиональный уход за ногтями и стопами в уютном кабинете.</p>
+          <div class="card-foot"><span class="price">1500&nbsp;₽</span><button class="btn btn-line btn-sm" data-service="Мужской педикюр">Записаться</button></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Волосы</h3>
+      <div class="cards">
+        <article class="card">
+          <h3>Женская стрижка</h3>
+          <p>Стрижки любой сложности. Мастера с опытом от 5 до 15 лет. Мытьё головы и укладка входят в стоимость.</p>
+          <div class="card-foot"><span class="price">800&nbsp;₽</span><button class="btn btn-line btn-sm" data-service="Женская стрижка">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Окрашивание волос</h3>
+          <p>Модный оттенок, выход из чёрного, мелирование, вуаль, растяжка цвета, контуринг, airtouch, балаяж.</p>
+          <div class="card-foot"><span class="price">от 3500&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Окрашивание волос">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Ботокс и кератин</h3>
+          <p>СПА-процедуры для волос. Правильный уход и грамотно подобранные средства.</p>
+          <div class="card-foot"><span class="price">1500&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Ботокс и кератин">Записаться</button></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Ногти и брови</h3>
+      <div class="cards">
+        <article class="card">
+          <h3>Маникюр</h3>
+          <p>Маникюр, гель-лак, наращивание, коррекция. Мастера с опытом от 5 лет.</p>
+          <div class="card-foot"><span class="price">по запросу</span><button class="btn btn-line btn-sm" data-service="Маникюр">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Педикюр</h3>
+          <p>Профессиональный уход за ногами. Мастера с опытом от 5 лет.</p>
+          <div class="card-foot"><span class="price">1500&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Педикюр">Записаться</button></div>
+        </article>
+        <article class="card">
+          <h3>Брови</h3>
+          <p>Восстановление, коррекция, оформление, долговременная укладка, эпиляция воском, мужская коррекция. Стаж мастеров 4 года.</p>
+          <div class="card-foot"><span class="price">700&nbsp;₽ <span class="time">· 1 ч</span></span><button class="btn btn-line btn-sm" data-service="Брови">Записаться</button></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <h2>Почему выбирают нас</h2>
+      <p class="lead">Мы создаём красоту с заботой о каждом клиенте. В студии вас ждут профессиональные мастера, индивидуальный подход, качественное обслуживание и уютная атмосфера.</p>
+      <p class="lead">Мы внимательно относимся к вашим пожеланиям, чтобы каждый визит приносил удовольствие, а результат радовал. Приходите за красотой, уверенностью в себе и хорошим настроением.</p>
+    </div>
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-star"/></svg><div><strong>Опытные мастера</strong><span>Стаж от 4 до 15 лет</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-user"/></svg><div><strong>Индивидуальный подход</strong><span>Учитываем ваши пожелания и особенности</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><strong>Качественное обслуживание</strong><span>Подобранные средства и аккуратная работа</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-home"/></svg><div><strong>Уютная атмосфера</strong><span>Спокойное место, где приятно провести время</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <h2>Фото работ</h2>
+    <div class="works">
+      <div class="ph">Стрижки</div>
+      <div class="ph">Окрашивание</div>
+      <div class="ph">Маникюр</div>
+      <div class="ph">Педикюр</div>
+      <div class="ph">Брови</div>
+      <div class="ph">Борода</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>Отзывы</h2>
+    <div class="cards">
+      <blockquote class="quote"><p>Текст отзыва клиента появится здесь. Несколько предложений о том, как прошёл визит и что понравилось.</p><footer><span>Имя клиента</span><span class="tag">Пример</span></footer></blockquote>
+      <blockquote class="quote"><p>Текст отзыва клиента появится здесь. Несколько предложений о том, как прошёл визит и что понравилось.</p><footer><span>Имя клиента</span><span class="tag">Пример</span></footer></blockquote>
+      <blockquote class="quote"><p>Текст отзыва клиента появится здесь. Несколько предложений о том, как прошёл визит и что понравилось.</p><footer><span>Имя клиента</span><span class="tag">Пример</span></footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div>
+      <h2>Запишитесь на удобное время</h2>
+      <p class="lead">Оставьте имя и телефон, мы перезвоним и подберём время. Или позвоните сами: <a href="tel:+79614090002">+7 (961) 409-00-02</a>.</p>
+    </div>
+    <form id="form" novalidate>
+      <label>Имя
+        <input type="text" name="name" autocomplete="given-name" required>
+        <span class="err" data-for="name"></span>
+      </label>
+      <label>Телефон
+        <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7" required>
+        <span class="err" data-for="phone"></span>
+      </label>
+      <label>Услуга
+        <select name="service" id="service">
+          <option value="">Не выбрана</option>
+          <option>Мужская стрижка</option>
+          <option>Оформление бороды</option>
+          <option>Мужской маникюр</option>
+          <option>Мужской педикюр</option>
+          <option>Женская стрижка</option>
+          <option>Окрашивание волос</option>
+          <option>Ботокс и кератин</option>
+          <option>Маникюр</option>
+          <option>Педикюр</option>
+          <option>Брови</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Записаться</button>
+      <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      <p class="ok" id="ok" role="status" hidden>Заявка принята. Мы скоро вам перезвоним.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site" id="contacts">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Студия Рзаевой Анны</h3>
+        <p>Салон красоты<br>Батайск, ул. Ворошилова 158</p>
+      </div>
+      <div>
+        <h3>Телефон</h3>
+        <a class="tel" href="tel:+79614090002">+7 (961) 409-00-02</a>
+      </div>
+      <div>
+        <h3>Написать нам</h3>
+        <div class="links">
+          <a class="btn btn-line btn-sm" href="https://t.me/+79614090002" rel="noopener">Telegram</a>
+          <a class="btn btn-line btn-sm" href="https://wa.me/79614090002" rel="noopener">WhatsApp</a>
+          <!-- Замените на ссылку на страницу студии во ВКонтакте -->
+          <a class="btn btn-line btn-sm" href="https://vk.com/" rel="noopener">VK</a>
+        </div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Студия Рзаевой Анны. Батайск.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.querySelector('.burger'),nav=document.getElementById('nav');
+  function setNav(o){nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Закрыть меню':'Открыть меню')}
+  burger.addEventListener('click',function(){setNav(!nav.classList.contains('open'))});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A')setNav(false)});
+
+  var form=document.getElementById('form'),sel=document.getElementById('service'),ok=document.getElementById('ok');
+  var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function goTo(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    try{
+      el.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'});
+    }catch(err){
+      el.scrollIntoView(true);
+    }
+    /* запасной вариант: если страница не сдвинулась (встроенный просмотр, старый браузер) */
+    setTimeout(function(){
+      var top=el.getBoundingClientRect().top;
+      if(Math.abs(top-80)>160){
+        var y=Math.max(0,top+(window.pageYOffset||document.documentElement.scrollTop)-80);
+        window.scrollTo(0,y);
+        if(document.scrollingElement)document.scrollingElement.scrollTop=y;
+        if(Math.abs(el.getBoundingClientRect().top-80)>160)location.hash=id;
+      }
+    },700);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1);
+      if(!id||!document.getElementById(id))return;
+      e.preventDefault();
+      setNav(false);
+      goTo(id);
+    });
+  });
+  document.querySelectorAll('[data-service]').forEach(function(b){
+    b.addEventListener('click',function(){
+      sel.value=b.getAttribute('data-service');
+      goTo('book');
+    });
+  });
+
+  function err(n,m){
+    var f=form.elements[n];
+    form.querySelector('[data-for="'+n+'"]').textContent=m;
+    f.setAttribute('aria-invalid',m?'true':'false');
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=form.elements.name.value.trim(),phone=form.elements.phone.value.trim();
+    var digits=phone.replace(/\D/g,'');
+    err('name',name?'':'Введите имя');
+    err('phone',digits.length>=10?'':'Введите телефон полностью, например +7 961 000-00-00');
+    if(!name||digits.length<10)return;
+    /* Здесь подключается отправка заявки: Telegram-бот, Formspree, почта или CRM.
+       Данные: name, phone, form.elements.service.value */
+    form.reset();
+    ok.hidden=false;
+  });
+})();
+</script>
+</body>
+</html>
